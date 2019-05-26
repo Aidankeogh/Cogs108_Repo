@@ -14,7 +14,7 @@ import random
 
 
 # A constant for the top most useful uni-, bi-, and trigrams
-most_useful = {"uni": 500, "bi": 250, "tri": 25}
+most_useful = {"uni": 100, "bi": 100, "tri": 0}
 
 
 # **read_data()**
@@ -179,14 +179,16 @@ def map_gram_to_idx(grams_dict, num_uni=most_useful["uni"],
 # In[7]:
 
 
-def vectorize(text, gram_to_idx):
-    feats = [0] * len(gram_to_idx)    
+def vectorize(project, gram_to_idx):
+    text = project['text_feats']
+    feats = [0] * (len(gram_to_idx) + 1)
+    feats[-1] = project['goal'] / 1000
     proj_grams = grams_by_project(text)
         
     for _, grams in proj_grams.items():
         for g in grams:
             if g in gram_to_idx:
                 feats[gram_to_idx[g]] = 1
-                
+               
     return feats
 
