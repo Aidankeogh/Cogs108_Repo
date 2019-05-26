@@ -182,7 +182,7 @@ def map_gram_to_idx(grams_dict, num_uni=most_useful["uni"],
 def vectorize(project, gram_to_idx):
     text = project['text_feats']
     feats = [0] * (len(gram_to_idx) + 1)
-    feats[-1] = project['goal'] / 1000
+    feats[-1] = project['goal']
     proj_grams = grams_by_project(text)
         
     for _, grams in proj_grams.items():
