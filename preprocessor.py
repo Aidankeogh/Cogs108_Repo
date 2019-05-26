@@ -14,7 +14,7 @@ import random
 
 
 # A constant for the top most useful uni-, bi-, and trigrams
-most_useful = {"uni": 100, "bi": 100, "tri": 0}
+most_useful = {"uni": 175, "bi": 25, "tri": 0}
 
 
 # **read_data()**
