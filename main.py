@@ -161,10 +161,10 @@ print(grams_df['art']['grams'][0])
 # plt.figure(figsize=(20,10))
 # plt.show() 
 # Actual project finder. If you're confused by a word, check this out
-#word = 'camera'
-#category = 'games'
-#for i in range(len(projects)):
-    #if word in projects[i]['text_feats'] and category in projects[i]['category']:
-        #print(projects[i]['text'])
-        #print(projects[i]['pledged'], "$ / ", projects[i]['goal'], "$")
-        #print()
+word = 'camera'
+category = 'games'
+for i in range(len(projects)):
+    if word in projects[i]['text_feats'] and category in projects[i]['category']:
+        print(projects[i]['text'])
+        print(projects[i]['pledged'], "$ / ", projects[i]['goal'], "$")
+        print()
